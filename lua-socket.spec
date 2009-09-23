@@ -3,7 +3,7 @@
 Summary:        Network access library for the Lua programming language
 Name:           lua-socket
 Version:        2.0.2
-Release:        %{mkrel 2}
+Release:        %mkrel 3
 License:        MIT
 Group:          Development/Other
 URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
