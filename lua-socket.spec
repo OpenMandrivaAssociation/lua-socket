@@ -1,19 +1,19 @@
 %define lua_version	5.1
 
 Summary:        Network access library for the Lua programming language
-Name:           luasocket
+Name:           lua-socket
 Version:        2.0.2
 Release:        %{mkrel 2}
 License:        MIT
 Group:          Development/Other
 URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
-Source0:        %{name}-%{version}.tar.gz
+Source0:        luasocket-%{version}.tar.gz
 Patch0:		luasocket-2.0.2-cflags.patch
-BuildRoot:      %_tmppath/%{name}-buildroot
 BuildRequires:	lua-devel
 Requires:	lua
 Obsoletes:	%{mklibname luasocket 2} < %{version}-%{release}
 Obsoletes:	%{mklibname luasocket 2 -d} < %{version}-%{release}
+BuildRoot:      %_tmppath/%{name}-%{version}
 
 %description
 LuaSocket is a Lua extension library that is composed by two parts: a
@@ -23,7 +23,7 @@ e-mails), HTTP (WWW access) and FTP (uploading and downloading files)
 protocols.
 
 %prep
-%setup -q
+%setup -q -n luasocket-%{version}
 %patch0 -p1 -b .cflags
 
 %build
@@ -44,4 +44,3 @@ export CFLAGS="%{optflags} -fPIC"
 %{_libdir}/lua/%{lua_version}/socket/*.so
 %{_datadir}/lua/5.1/*.lua
 %{_datadir}/lua/5.1/socket/*.lua
-
