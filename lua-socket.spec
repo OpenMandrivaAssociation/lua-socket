@@ -44,3 +44,44 @@ export CFLAGS="%{optflags} -fPIC"
 %{_libdir}/lua/%{lua_version}/socket/*.so
 %{_datadir}/lua/5.1/*.lua
 %{_datadir}/lua/5.1/socket/*.lua
+
+
+%changelog
+* Wed Dec 08 2010 Rémy Clouard <shikamaru@mandriva.org> 2.0.2-4mdv2011.0
++ Revision: 616183
+- rebuild for the mass rebuild
+
+* Wed Sep 23 2009 Guillaume Rousse <guillomovitch@mandriva.org> 2.0.2-3mdv2010.0
++ Revision: 448047
+- bump release
+- package renaming
+- package renaming
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 2.0.2-2mdv2010.0
++ Revision: 429883
+- rebuild
+
+* Thu Aug 28 2008 Adam Williamson <awilliamson@mandriva.org> 2.0.2-1mdv2009.0
++ Revision: 277052
+- package doc files properly with %%doc
+- drop now unnecessary %%post and %%postun workarounds
+- drop the manual installation, just pass appropriate vars to makeinstall
+- rewrap description
+- obsolete the insane old packaging of this as if it were a system library
+- correct lua buildrequires and requires
+- add new cflags.patch for just the allowing external CFLAGS bit
+- drop old patch (lots of irrelevant stuff in it)
+- update URL
+- rebuild for new lua
+- drop unnecessary defines
+- new release 2.0.2
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - kill re-definition of %%buildroot on Pixel's request
+    - import luasocket
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
