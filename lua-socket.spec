@@ -43,10 +43,10 @@ export CFLAGS="%{optflags} -fPIC"
 %files
 %defattr(-,root,root)
 %doc NEW README doc/*
-%{_libdir}/lua/%{lua_version}/mime/*.so
-%{_libdir}/lua/%{lua_version}/socket/*.so
-%{_datadir}/lua/5.1/*.lua
-%{_datadir}/lua/5.1/socket/*.lua
+#{_libdir}/lua/%{lua_version}/mime/*.so
+#{_libdir}/lua/%{lua_version}/socket/*.so
+#{_datadir}/lua/5.1/*.lua
+#{_datadir}/lua/5.1/socket/*.lua
 
 
 %changelog
