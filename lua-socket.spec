@@ -26,7 +26,7 @@ e-mails), HTTP (WWW access) and FTP (uploading and downloading files)
 protocols.
 
 %prep
-%setup -q -n luasocket-%{version}
+%setup -q -n luasocket-%{gitdate}
 %patch0 -p1 -b .cflags
 
 %build
