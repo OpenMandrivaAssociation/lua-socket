@@ -11,7 +11,7 @@ Group:          Development/Other
 URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 # Git downloaded from here: https://github.com/diegonehab/luasocket
 Source0:        luasocket-%{gitdate}.tar.gz
-Patch0:		luasocket-2.0.2-cflags.patch
+#Patch0:		luasocket-2.0.2-cflags.patch
 BuildRequires:	lua-devel
 Requires:	lua
 Obsoletes:	%{mklibname luasocket 2} < %{version}-%{release}
@@ -27,7 +27,7 @@ protocols.
 
 %prep
 %setup -q -n luasocket-%{gitdate}
-%patch0 -p1 -b .cflags
+#patch0 -p1 -b .cflags
 
 %build
 export CFLAGS="%{optflags} -fPIC"
