@@ -1,14 +1,17 @@
+%define gitdate 20200328
+
 %define lua_version	5.1
 
 Summary:        Network access library for the Lua programming language
 Name:           lua-socket
-Version:        2.0.2
-Release:        5
+Version:        3.0
+Release:        0.%{gitdate}.1
 License:        MIT
 Group:          Development/Other
 URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
-Source0:        luasocket-%{version}.tar.gz
-Patch0:		luasocket-2.0.2-cflags.patch
+# Git downloaded from here: https://github.com/diegonehab/luasocket
+Source0:        luasocket-%{gitdate}.tar.gz
+
 BuildRequires:	lua-devel
 Requires:	lua
 Obsoletes:	%{mklibname luasocket 2} < %{version}-%{release}
@@ -23,16 +26,15 @@ e-mails), HTTP (WWW access) and FTP (uploading and downloading files)
 protocols.
 
 %prep
-%setup -q -n luasocket-%{version}
-%patch0 -p1 -b .cflags
+%setup -q -n luasocket-%{gitdate}
 
 %build
 export CFLAGS="%{optflags} -fPIC"
-%make
+%make_build
 
 %install
 %__rm -rf %{buildroot}
-%makeinstall_std INSTALL_TOP_SHARE=%{buildroot}/%{_datadir}/lua/%{lua_version} INSTALL_TOP_LIB=%{buildroot}/%{_libdir}/lua/%{lua_version}
+%make_install INSTALL_TOP_SHARE=%{buildroot}/%{_datadir}/lua/%{lua_version} INSTALL_TOP_LIB=%{buildroot}/%{_libdir}/lua/%{lua_version}
 
 %clean
 %__rm -rf %{buildroot}
@@ -40,11 +42,11 @@ export CFLAGS="%{optflags} -fPIC"
 %files
 %defattr(-,root,root)
 %doc NEW README doc/*
-%{_libdir}/lua/%{lua_version}/mime/*.so
-%{_libdir}/lua/%{lua_version}/socket/*.so
-%{_datadir}/lua/5.1/*.lua
-%{_datadir}/lua/5.1/socket/*.lua
-
+%{_prefix}/local/lib/lua/*.*/mime/core.so
+%{_prefix}/local/lib/lua/*.*/socket/core.so
+%{_prefix}/local/share/lua/*.*/ltn12.lua
+%{_prefix}/local/share/lua/*.*/mime.lua
+%{_prefix}/local/share/lua/*.*/socket*
 
 %changelog
 * Wed Dec 08 2010 Rémy Clouard <shikamaru@mandriva.org> 2.0.2-4mdv2011.0
