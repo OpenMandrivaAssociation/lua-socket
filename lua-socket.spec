@@ -43,11 +43,11 @@ export CFLAGS="%{optflags} -fPIC"
 %files
 %defattr(-,root,root)
 %doc NEW README doc/*
-#{_libdir}/lua/%{lua_version}/mime/*.so
-#{_libdir}/lua/%{lua_version}/socket/*.so
-#{_datadir}/lua/5.1/*.lua
-#{_datadir}/lua/5.1/socket/*.lua
-
+%{_prefix}/local/lib/lua/*.*/mime/core.so
+%{_prefix}/local/lib/lua/*.*/socket/core.so
+%{_prefix}/local/share/lua/*.*/ltn12.lua
+%{_prefix}/local/share/lua/*.*/mime.lua
+%{_prefix}/local/share/lua/*.*/socket*
 
 %changelog
 * Wed Dec 08 2010 Rémy Clouard <shikamaru@mandriva.org> 2.0.2-4mdv2011.0
