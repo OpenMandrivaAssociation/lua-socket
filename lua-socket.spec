@@ -1,13 +1,16 @@
+%define gitdate 20200328
+
 %define lua_version	5.1
 
 Summary:        Network access library for the Lua programming language
 Name:           lua-socket
-Version:        2.0.2
-Release:        5
+Version:        3.0
+Release:        0.%{gitdate).1
 License:        MIT
 Group:          Development/Other
 URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
-Source0:        luasocket-%{version}.tar.gz
+# Git downloaded from here: https://github.com/diegonehab/luasocket
+Source0:        luasocket-%{gitdate}.tar.gz
 Patch0:		luasocket-2.0.2-cflags.patch
 BuildRequires:	lua-devel
 Requires:	lua
