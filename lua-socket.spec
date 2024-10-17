@@ -8,7 +8,7 @@ Version:        3.0
 Release:        0.%{gitdate}.1
 License:        MIT
 Group:          Development/Other
-URL:            http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
+URL:            https://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 # Git downloaded from here: https://github.com/diegonehab/luasocket
 Source0:        luasocket-%{gitdate}.tar.gz
 
