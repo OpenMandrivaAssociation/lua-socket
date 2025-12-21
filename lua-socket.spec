@@ -12,6 +12,7 @@ URL:            https://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
 # Git downloaded from here: https://github.com/diegonehab/luasocket
 Source0:        luasocket-%{gitdate}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	lua-devel
 Requires:	lua
 Obsoletes:	%{mklibname luasocket 2} < %{version}-%{release}
